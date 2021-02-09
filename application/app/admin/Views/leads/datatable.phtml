@@ -1,0 +1,32 @@
+<?php
+
+$records = [];
+
+if ( isset($leads) ) {
+
+	$lead = new \App\Models\LeadModel();
+
+	foreach ( $leads -> result() as $row ){
+
+		$cliente = $lead -> getCliente($row -> id_cliente) -> nome;
+		$produto = $lead -> getProduto($row -> id_produto) -> nome;
+
+		$records[] = array(
+			'<label><input type="checkbox" name="id[]" class="light-blue" value="' . $row -> id . '""><span></span></label>',
+			// $row -> id,
+			$cliente,
+			$produto,
+			'<div class="center-align">' . $row -> datahora . '</div>',
+			'<div class="center-align">
+				<button data-href="' . base_url() . 'intencoes/' . $row -> id . '" class="bt_edit btn-floating float-none"></button>
+			</div>'
+		);
+
+	}
+
+}
+
+echo json_encode([
+	'data' => $records,
+	'recordsFiltered' => $numRows,
+]);

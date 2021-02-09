@@ -1,0 +1,32 @@
+<?php
+
+$records = [];
+
+if ( isset($banners) ) {
+
+	foreach ( $banners -> result() as $row ){
+
+		$date = new DateTime($row -> dataadd);
+
+		$records[] = array(
+			'<label><input type="checkbox" name="id[]" class="light-blue" value="' . $row -> id . '" data-status="' . $row -> status . '"><span></span></label>',
+			// $row -> id,
+			$row -> titulo,
+			$row -> descricao,
+			$date -> format('d/m/Y H:i:s'),
+			'<div class="' . ( $row -> status === '0' ? 'blocked' : null) . ' center-align">
+				<i class="material-icons">' . ( $row -> status === '0' ? 'lock' : 'check') . '</i>
+			</div>',
+			'<div class="' . ( $row -> status === '0' ? 'blocked' : null) . ' center-align">
+				<button data-href="' . base_url() . 'banners/' . $row -> id . '" class="bt_edit btn-floating float-none"></button>
+			</div>'
+		);
+
+	}
+
+}
+
+echo json_encode([
+	'data' => $records,
+	'recordsFiltered' => $numRows,
+]);

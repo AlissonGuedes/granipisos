@@ -1,0 +1,49 @@
+<section class="area_distribuidor" style="background: #131313;">
+
+	<div class="container pl-5">
+
+		<div class="title_2">NOSSOS CONTATOS</div>
+
+		<?php if ( ! empty($redes_sociais['whatsapp']) ) : ?>
+		<a href="https://wa.me/<?= limpa_string($redes_sociais['whatsapp'], ''); ?>" target="_blank">
+			<div class="whats">
+				<div class="icon_whats_b">
+					<img src="<?= base_path(true); ?>img/icons/icon_whats_b.png" class="img_cem">
+				</div>
+				<div class="n_whats"><?= $redes_sociais['whatsapp']; ?> </div>
+			</div>
+		</a>
+		<?php endif; ?>
+
+		<?php if ( ! empty($redes_sociais['email']) ) : ?>
+		<a href="mailto://<?= $redes_sociais['email']; ?>">
+			<div class="mail">
+				<div class="icon_mail_b">
+					<img src="<?= base_path(true); ?>img/icons/icon_envelope_b.png" class="img_cem">
+				</div>
+				<div class="email"><?= configuracoes('email', 'tb_empresa'); ?></div>
+			</div>
+		</a>
+		<?php endif; ?>
+
+		<div class="social_media">
+			<?php if ( ! empty($redes_sociais['facebook']) ) : ?>
+			<a href="<?= $redes_sociais['facebook']; ?>" target="_blank">
+				<div class="icon_face_b">
+					<img src="<?= base_path(true); ?>img/icons/icon_face_b.png" class="img_cem">
+				</div>
+			</a>
+			<?php endif; ?>
+			<?php if ( ! empty($redes_sociais['instagram']) ) : ?>
+			<a href="<?= $redes_sociais['instagram']; ?>" target="_blank">
+				<div class="icon_insta_b">
+					<img src="<?= base_path(true); ?>img/icons/icon_insta_b.png" class="img_cem">
+				</div>
+			</a>
+			<span class="name_social"><?= $redes_sociais['instagram']; ?></span>
+			<?php endif; ?>
+		</div>
+
+	</div>
+
+</section>

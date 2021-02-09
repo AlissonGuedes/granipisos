@@ -1,0 +1,77 @@
+<div class="area_left">
+    <div class="logotw">
+        <img src="{+ base_path +}tacticweb/img/logotw.png" class="img_cem">
+        <div class="title_tela1">Área</div>
+        <div class="title_tela2 f_bebas">ADMINISTRATIVA</div>
+    </div>
+</div>
+
+<div class="area_right">
+
+    <div class="logo_cliente">
+        <img src="{+ base_path true +}img/logo.png" class="img_cem">
+    </div>
+
+    <div class="form_login">
+
+        <div class="row">
+            <div class="input-field col s12 vertical-align no-padding">
+                <button type="button" id="btn-back" class="btn btn-floating left transparent z-depth-0">
+					<i class="material-icons grey-text text-darken-4">keyboard_arrow_left</i>
+				</button>
+                <h5 id="boas-vindas" class="animated lightSpeedInLeft faster delay-15"> Olá, seja bem-vindo!</h5>
+            </div>
+        </div>
+
+        <form novalidate id="frm-login" class="login-form" action="{+ base_url +}login" method="post" enctype="multipart/form-data" autocomplete="off">
+
+            <div class="form">
+
+                <div id="input-login" class="slow">
+                    <div class="input-field amber-text">
+                        <input type="email" name="login" class="amber-border" id="login" autofocus="autofocus">
+                        <label for="login">
+							{__USERNAME__}
+						</label>
+                    </div>
+                    <!--<button type="button" id="relembrar_login" name="relembrar_login" class="btn btn-flat pl-0 pr-0 transparent left">-->
+                    <!--	{__RETRIEVE_LOGIN__}-->
+                    <!--</button>-->
+                </div>
+
+                <div id="input-pass" class="slow">
+                    <div class="input-field amber-text">
+                        <input type="password" name="senha" class="amber-border" id="senha" disabled="disabled" autofocus="autofocus" minlength="5">
+                        <label for="pass">
+							{__PASSWORD__}
+						</label>
+                    </div>
+                    <!--<button type="button" id="relembrar_senha" name="relembrar_senha" class="btn btn-flat pl-0 pr-0 transparent right">-->
+					<!--	{__RETRIEVE_PASSWORD__}-->
+					<!--</button>-->
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <button type="submit" id="entrar" name="entrar" class="btn btn-large waves-effect waves-light col next amber">
+					{__NEXT__}
+					<i class="material-icons margin-left">input</i>
+				</button>
+            </div>
+
+            <input type="hidden" name="acao" value="login">
+            <input type="hidden" name="_method" value="{method}">
+
+        </form>
+
+        <br>
+
+        <div class="aviso">
+            Caso tenha esquecido seus dados de acesso, favor entrar em contato com o desenvolvedor.<br><br> TacticWeb / Luiz Felipe:<br> fone: <strong>(83)98833-6804</strong><br> e-mail: <strong>tacticwebcg@gmail.com</strong>
+        </div>
+
+    </div>
+
+</div>

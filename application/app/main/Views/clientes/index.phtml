@@ -1,0 +1,32 @@
+<div class="tag_title">
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<div class="title_page1">CLIENTES</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container pt-3 pb-3" style="min-height: 600px;">
+
+	<div class="row">
+		<div class="col">
+			<?php if ( $rows -> numRows() ) : ?>
+			<?php foreach($rows -> get() -> getResult() as $row) : ?>
+
+				<?php $link = !empty($row -> site) ? $row -> site: '#'; ?>
+				<?php $target = !empty($row -> site) ? 'target="_blank"' : ''; ?>
+				<a href="<?= !empty($row -> site) ? $row -> site: '#'; ?>" <?= $target; ?>>
+					<div class="cliente_img"><img src="<?= $row -> imagem; ?>" class="img_cem"></div>
+				</a>
+			<?php endforeach; ?>
+			<?php else: ?>
+				Nenhum registro encontrado.
+			<?php endif; ?>
+		</div>
+	</div>
+
+</div>
+
+<?php require VIEWSPATH . 'contato/section.phtml'; ?>

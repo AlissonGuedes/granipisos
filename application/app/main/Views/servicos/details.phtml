@@ -1,0 +1,110 @@
+<?php if ( isset($row) ) : ?>
+<div class="tag_title">
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<div class="left mr-2">
+					<a href="<?= base_url(); ?>servicos" data-tooltip="Voltar">
+						<i class="material-icons">keyboard_arrow_left</i>
+					</a>
+				</div>
+				<div class="title_page1">SERVIÇOS</div>
+				<div class="title_page2"><?= isset($row) ? $row -> nome : null; ?></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div style="min-height: 600px;">
+
+	<div class="container pt-3 pb-3">
+
+		<div class="row">
+
+			<div class="col s12">
+
+				<div class="img_empresa">
+					<div class="img_prod">
+						<img src="<?= $row -> imagem; ?>" class="img_cem">
+					</div>
+					<a href="#interesse" class="modal-trigger" data-trigger="interesse">
+						<div class="bt_interesse_prod mb-5" data-element=".box_interesse" id="bt_interesse">
+							Quero contratar este serviço!
+							<br>
+							Clique aqui!
+						</div>
+					</a>
+				</div>
+
+				<div class="info_empresa">
+					<div class="title1_empresa"><?= $row -> nome; ?></div>
+					<div class="text_empresa"><?= $row -> descricao; ?></div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+    <?php require VIEWSPATH . 'contato/section.phtml'; ?>
+
+</div>
+
+<?php else : ?>
+
+<div class="container mt-10 mb-10">
+	<?php require VIEWSPATH . 'errors/html/error_404.php'; ?>
+</div>
+
+<?php endif; ?>
+
+<div id="interesse" class="modal inline">
+	<div class="modal-header">
+		<button class="btn btn-large btn-flat btn-floating transparent waves-effect waves-light modal-close">
+			<i class="material-icons grey-text">
+				close
+			</i>
+		</button>
+	</div>
+	<div class="modal-content">
+		<div class="content-left">
+			<!-- <h4 class="text_prod_int">SERVIÇO:</h4> -->
+			<div class="name_prod_int"><?= $row -> nome; ?></div>
+			<div class="img_prod_int">
+				<img src="<?= $row -> imagem; ?>" class="img_cem">
+			</div>
+		</div>
+		<div class="shadow_int">
+			<img src="<?= base_path(true); ?>img/shadow_interesse.png" class="img_cem">
+		</div>
+		<div class="content-right">
+			<div class="form_prod_int">
+				<div class="intencao_text">QUERO</div>
+				<div class="compra_text">CONTRATAR</div>
+				<div class="text_info_compra">
+					Preencha os dados abaixo e nos envie.<br>
+					Entraremos em contato o mais breve possível com você.
+				</div>
+			</div>
+			<div class="row">
+				<form method="post" action="<?= base_url(); ?>servicos" autocomplete="off">
+					<div class="input-field">
+						<input type="text" name="nome" class="grey lighten-2" placeholder="Seu nome">
+					</div>
+					<div class="input-field">
+						<input type="email" name="email" class="grey lighten-2" placeholder="Seu e-mail">
+					</div>
+					<div class="input-field">
+						<input type="tel" name="telefone" class="grey lighten-2" placeholder="Seu telefone">
+					</div>
+					<div class="input-field">
+						<button type="submit" name="enviar" class="btn col gradient-45deg-darken-pink-pink waves-effect waves-light">Enviar <i class="material-icons right">send</i></button>
+					</div>
+					<input type="hidden" name="_method" value="post">
+					<input type="hidden" name="servico" value="<?= $row -> id; ?>">
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

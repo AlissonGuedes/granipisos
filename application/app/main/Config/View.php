@@ -1,0 +1,60 @@
+<?php namespace Config;
+
+class View extends \CodeIgniter\Config\View
+{
+	/**
+	 * When false, the view method will clear the data between each
+	 * call. This keeps your data safe and ensures there is no accidental
+	 * leaking between calls, so you would need to explicitly pass the data
+	 * to each view. You might prefer to have the data stick around between
+	 * calls so that it is available to all views. If that is the case,
+	 * set $saveData to true.
+	 */
+	public $saveData = true;
+
+	/**
+	 * Parser Filters map a filter name with any PHP callable. When the
+	 * Parser prepares a variable for display, it will chain it
+	 * through the filters in the order defined, inserting any parameters.
+	 * To prevent potential abuse, all filters MUST be defined here
+	 * in order for them to be available for use within the Parser.
+	 *
+	 * Examples:
+	 *  { title|esc(js) }
+	 *  { created_on|date(Y-m-d)|esc(attr) }
+	 */
+	public $filters = [
+		'date' => '\date'
+	];
+
+	/**
+	 * Parser Plugins provide a way to extend the functionality provided
+	 * by the core Parser by creating aliases that will be replaced with
+	 * any callable. Can be single or tag pair.
+	 */
+	public $plugins = [
+		'view' => '\Config\View::view',
+		'basesite'  => '\Config\View::basesite',
+		'buildMenu' => '\Config\View::buildMenu',
+		'configuracoes' => '\configuracoes',
+		'base_url' => '\base_url',
+		'base_site' => '\base_site',
+		'base_path' => '\base_path',
+		'limpa_string' => '\limpa_string'
+	];
+
+	// public static function basesite($path) {
+
+	// 	$function = [];
+	// 	$fn = [];
+
+	// 	foreach ( $path as $p ) {
+	// 		$function = 'base_' . $p;
+	// 		$fn[] = $function();
+	// 	}
+
+	// 	return implode('', $fn);
+
+	// }
+
+}

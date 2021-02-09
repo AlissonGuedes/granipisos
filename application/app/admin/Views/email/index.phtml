@@ -1,0 +1,78 @@
+<div class="container_right panel">
+
+	<div class="title_pg f_avante">
+		<!-- Header search bar starts -->
+		<div class="mr-2">Emails - Lista</div>
+		<div class="input-field outlined">
+			<i class="material-icons prefix">search</i>
+			<input type="search" class="dataTable_search white-text" placeholder="Pesquisar emails">
+		</div>
+	</div>
+	<!-- Header search bar Ends -->
+
+	<!-- BEGIN panel-content -->
+	<div class="panel-content">
+
+		<div class="panel-header no-border">
+
+			<!-- Botoões Adicionar e Listar -->
+			<div class="toolbar bts_acao f_bebas">
+
+				<div class="buttons">
+
+					<div class="hide-buttons">
+						<button class="btn btn-large update waves-effect" name="status" value="0" data-tooltip="Arquivar" data-link="<?= base_url(); ?>mail/status">
+							<i class="material-icons">archive</i>
+						</button>
+						<button class="btn btn-large update waves-effect" name="status" value="0" data-tooltip="" data-on="Maracar como não lida" data-off="Marcar como lida" data-link="<?= base_url(); ?>mail/status">
+							<i class="material-icons" data-on="mail" data-off="drafts">mail</i>
+						</button>
+						<button class="btn btn-large excluir waves-effect" disabled="disabled" data-tooltip="Excluir" data-link="<?= base_url(); ?>mail" style="border: none">
+							<i class="material-icons">delete_forever</i>
+						</button>
+						<div class="divider"></div>
+						<div class="buttons selecteds-label white-text"> </div>
+					</div>
+
+					<div id="form_mail_actions" style="display: none;">
+						<div class="buttons">
+							<button class="btn btn-large btn-back waves-effect" data-trigger-off="#composer" style="border: none">
+								<i class="material-icons">arrow_back</i>
+							</button>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- BEGIN panel-body -->
+		<div class="area_dashboard panel-body p-0" style="position:relative; padding-bottom: 30px; overflow: hidden; height: calc(100vh - 280px);">
+
+			<table class="datatable responsiveDatatable" data-link="<?= base_url(); ?>mail">
+				<thead>
+					<tr>
+						<th class="disabled sortable white-text" width="1%" data-orderable="false">
+							<label>
+								<input type="checkbox" class="amber" id="check-all">
+								<span> </span>
+							</label>
+						</th>
+						<th class="white-text" data-orderable="true" width="40%">Nome</th>
+						<th class="white-text" data-orderable="true" width="40%">Assunto</th>
+						<th class="white-text left-align" data-orderable="true" width="20%">Recebimento</th>
+					</tr>
+				</thead>
+			</table>
+
+			<?php require 'formulario.phtml'; ?>
+
+		</div>
+		<!-- END panel-body -->
+
+	</div>
+	<!-- END panel-content -->
+
+</div>

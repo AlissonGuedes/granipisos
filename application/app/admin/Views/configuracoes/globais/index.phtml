@@ -1,0 +1,55 @@
+<div class="container_right">
+	<div class="title_pg f_avante">Quem Somos</div>
+
+	<div class="area_dashboard no-border">
+
+		<!-- conteúdo -->
+		<form method="post" action="<?= base_url(); ?>quemsomos">
+
+			<!-- BEGIN Input[subtitutlo] -->
+			<div class="col s12 mb-2">
+				<div class="input-field">
+					<label class="grey-text">Título do site</label>
+					<input type="text" name="title" class="amber-border white-text" maxlength="160" value="<?= isset($row) ? $row -> title : null; ?>">
+					<small class="amber-text">Exibir o título do site na aba do navegador</small>
+				</div>
+			</div>
+			<!-- END Input[Login] -->
+
+			<!-- BEGIN Input[subtitutlo] -->
+			<div class="col s12 mb-2">
+				<div class="input-field">
+					<label class="grey-text">Descrição</label>
+					<input type="text" name="description" class="amber-border white-text" maxlength="160" value="<?= isset($row) ? $row -> description : null; ?>">
+					<small class="amber-text">Este campo servirá para indexar o site nos buscadores (Google, Bing etc)</small>
+				</div>
+			</div>
+			<!-- END Input[Login] -->
+
+			<!-- BEGIN Input[Login] -->
+			<div class="col s12 mb-2">
+				<div class="input-field">
+					<!-- <i class="material-icons prefix">account_circle</i> -->
+					<div class="editor--full editor quem_somos" data-placeholder="História da empresa"><?= isset($row) ? $row -> quem_somos : null; ?></div>
+					<input type="hidden" name="quem_somos" id="quem_somos">
+				</div>
+			</div>
+			<!-- END Input[Login] -->
+
+			<br>
+			<br>
+
+
+			<div class="row">
+				<button type="submit" class="amber btn col s12 l6 btn-large black-text waves-effect">SALVAR	</button>
+			</div>
+
+			<input type="hidden" name="acao" value="login">
+			<input type="hidden" name="id" value="<?= isset($row) ? $row -> id : null; ?>">
+			<input type="hidden" name="_method" value="<?= isset($row) ? 'put' : 'post'; ?>">
+
+		</form>
+
+	</div>
+
+</div>

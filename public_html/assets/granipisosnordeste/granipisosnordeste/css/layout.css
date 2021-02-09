@@ -1,0 +1,1408 @@
+@charset "utf-8";
+
+/**PADRÕES**/
+body{
+	margin: 0;
+	padding: 0;
+	font-family: 'avante', sans-serif;
+	font-size: 14px;
+	height: 100%;
+	overflow-x: hidden;
+	background: #fff;
+}
+
+img, a{
+	text-decoration: none;
+	border: none;
+}
+
+ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.img_cem{
+	width: 100%;
+}
+
+.corpo{
+	display: none;
+}
+
+.carregando{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	display: flex;
+  align-items: center;
+  justify-content: center;
+	animation-name: load;
+	animation-duration: 5s;
+	animation-iteration-count: 1;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes load {
+    0%   {opacity: 0%;}
+		15%   {opacity: 100%;}
+		75%   {opacity: 100%;}
+		100%   {opacity: 0%;}
+}
+
+/* Standard syntax */
+@keyframes load {
+	0%   {opacity: 0%;}
+	15%   {opacity: 100%;}
+	75%   {opacity: 100%;}
+	100%   {opacity: 0%;}
+}
+
+.logo_carregando{
+	width: 30%;
+	overflow: hidden;
+}
+
+.loading_gif{
+	width: 300px;
+	margin: 0 auto;
+}
+
+/**FONTES**/
+@font-face {font-family: "social"; src: url("../fontes/social_font.ttf") format("truetype");}
+@font-face {font-family: "myriad_n"; src: url("../fontes/myriad_n.ttf") format("truetype");}
+@font-face {font-family: "myriad_b"; src: url("../fontes/myriad_b.ttf") format("truetype");}
+@font-face {font-family: "bebas"; src: url("../fontes/bebas.ttf") format("truetype");}
+@font-face {font-family: "futura"; src: url("../fontes/futura.ttf") format("truetype");}
+@font-face {font-family: "avante"; src: url("../fontes/avante.ttf") format("truetype");}
+
+.f_social{font-family: "social";}
+.f_myriad_n{font-family: "myriad_n";}
+.f_myriad_b{font-family: "myriad_b";}
+.f_bebas{font-family: "bebas";}
+.f_futura{font-family: "futura";}
+.f_avante{font-family: "avante";}
+
+/**container**/
+.container{
+	width: 1000px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+
+/**header**/
+header{
+	background: #fff;
+	display: block;
+	border-bottom: solid 2px #470926;
+	position: fixed;
+	z-index: 999999999;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+.menu1{
+	float: left;
+	width: 379px;
+	overflow: hidden;
+}
+
+.menu1 ul ul{
+	display: none;
+	position: absolute;
+	background: #470926;
+	padding: 20px;
+	width: 180px;
+	margin-top: 90px;
+	margin-left: 250px;
+	animation-name: menu;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+	opacity: 100%;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes menu {
+		0%   {opacity: 0%; margin-top: 100px;}
+		100%   {opacity: 100%; margin-top: 90px;}
+}
+
+/* Standard syntax */
+@keyframes menu {
+	0%   {opacity: 0%; margin-top: 100px;}
+	100%   {opacity: 100%; margin-top: 90px;}
+}
+
+.menu1 ul li:hover > ul{
+	display: block;
+}
+
+.menu1 ul ul li .lk_sub{
+	color: #fff;
+	padding: 10px 10px 10px 10px;
+	border-bottom: 1px solid #fff;
+	font-size: 16px;
+	transition: all .5s ease;
+}
+
+
+
+.menu1 ul ul li .lk_sub:hover{
+	color: #470926;
+	padding: 10px 0px 10px 20px;
+	background: #fff;
+}
+
+
+.lk_sub{
+	color: #000;
+}
+
+.shadow_l{
+	float: left;
+	width: 24px;
+	margin-right: 25px;
+	overflow: hidden;
+}
+
+
+.shadow_r{
+	float: left;
+	width: 24px;
+	margin-left: 25px;
+	overflow: hidden;
+}
+
+.logo{
+	float: left;
+	width: 144px;
+	overflow: hidden;
+	margin-top: 15px;
+}
+
+.lk{
+	color: #470926;
+	float: left;
+	font-size: 16px;
+	font-weight: bold;
+	margin:0 20px;
+	padding: 50px 0 50px 0;
+	transition: all .5s ease;
+}
+
+.lk:hover{
+	padding: 40px 0 60px 0;
+	padding-bottom: 35px;
+}
+
+.social{
+	float: left;
+	width: 90px;
+	margin-top: 45px;
+}
+
+.icon_social{
+	float: left;
+	width: 25px;
+	margin-left: 15px;
+}
+
+/**BT MOBILE**/
+.bt_menu_mob{
+	display: none;
+}
+
+
+
+/*slider*/
+/* jssor slider bullet navigator skin 05 css */
+        /*
+        .jssorb05 div           (normal)
+        .jssorb05 div:hover     (normal mouseover)
+        .jssorb05 .av           (active)
+        .jssorb05 .av:hover     (active mouseover)
+        .jssorb05 .dn           (mousedown)
+        */
+        .jssorb05 {
+            position: absolute;
+						height: 100% !important;
+        }
+        .jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
+            position: absolute;
+            /* size of bullet elment */
+            width: 16px;
+            height: 16px;
+            background: url('../img/b05.png') no-repeat;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .jssorb05 div { background-position: -7px -7px; }
+        .jssorb05 div:hover, .jssorb05 .av:hover { background-position: -37px -7px; }
+        .jssorb05 .av { background-position: -67px -7px; }
+        .jssorb05 .dn, .jssorb05 .dn:hover { background-position: -97px -7px; }
+
+		.btl{
+			position: absolute;
+			top: 50%;
+			margin-top: -28px;
+			width: 56px;
+			height: 56px;
+			left: 0;
+			background:url(../img/btl.png);
+			cursor: pointer;
+		}
+
+		.btr{
+			position: absolute;
+			top: 50%;
+			margin-top: -28px;
+			width: 56px;
+			height: 56px;
+			right: 0;
+			background:url(../img/btr.png);
+			cursor: pointer;
+		}
+
+		.slides{
+			height: 100% !important;
+		}
+
+		.slider_geral{
+			padding-top: 60px;
+			margin: 0 auto;
+			width: 100%;
+			overflow: hidden;
+			visibility: hidden;
+			margin-bottom: 0px;
+			background: url(../img/bg.jpg) fixed bottom;
+			background-size: cover;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			-ms-background-size: cover;
+		}
+
+		.img_slider{
+			cursor: default;
+			position: fixed;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100% !important;
+			overflow: hidden;
+		}
+
+		.banner_slide{
+			width: 100%;
+			height: 100% !important;
+		}
+
+		.shadow_slider{
+			display: block;
+			overflow: hidden;
+			width: 100%;
+			margin-top: -1px;
+		}
+
+		.bt_ball{
+			position: absolute;
+			margin-top: -140px;
+			z-index: 99999999;
+			width: 64px;
+			left: 50%;
+			margin-left: -32px;
+		}
+
+/*FIM SLIDER*/
+
+
+/**DESTAQUES**/
+.destaques{
+	display: block;
+	overflow: hidden;
+	padding: 0 0 100px 0;
+}
+
+.title_1{
+	text-align: center;
+	font-size: 38px;
+	color: #470926;
+	margin-bottom: 60px;
+}
+
+.prods_dest{
+	display: block;
+	overflow: hidden;
+}
+
+.conj_prod{
+	float: left;
+	width: 29%;
+	margin: 0 2%;
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 90px;
+}
+
+.img_tumb{
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+
+.name_prod{
+	font-size: 22px;
+	font-weight: bold;
+	overflow: hidden;
+	margin-bottom: 5px;
+	color: #470926;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.resume_prod{
+	font-size: 14px;
+	overflow: hidden;
+	color: #3d3d3d;
+	font-family: 'Montserrat', sans-serif;
+}
+
+
+/**AREA DISTRIBUIDOR**/
+.area_distribuidor{
+	background: #2e2e2e;
+	padding: 100px 0;
+	overflow: hidden;
+	color: #fff;
+	display: block;
+	text-align: center;
+}
+
+.title_2{
+	font-size: 38px;
+	margin-bottom: 40px;
+}
+
+.text_dist{
+	font-size: 18px;
+	margin-bottom: 40px;
+}
+
+.contato_dist{
+	margin: 0 auto;
+	width: 220px;
+	overflow: hidden;
+}
+
+.icon_dist{
+	float: left;
+	width: 35px;
+	margin: 0 10px;
+}
+
+
+
+
+/*FOOTER*/
+footer{
+	padding: 40px 0%;
+	overflow: hidden;
+	display: block;
+	color: #808080;
+	border-bottom: 5px solid #470926;
+}
+
+.logo_footer{
+	float: left;
+	width: 109px;
+	overflow: hidden;
+}
+
+.copyright{
+	float: left;
+	margin-left: 40px;
+	font-size: 12px;
+	overflow: hidden;
+	margin-top: 20px;
+}
+
+.tw{
+	width: 101px;
+	height: 28px;
+	float: right;
+	background:url(../img/tw.png) no-repeat left top;
+	transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-webkit-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	margin-top: 15px;
+}
+
+.tw:hover{
+	background:url(../img/tw.png) no-repeat right top;
+}
+
+/**box interesse**/
+.box_interesse{
+	display: none;
+}
+
+.transparencia{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 99999999999999999999999999999999999;
+	left: 0;
+	top: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	background: rgba(0, 0, 0, 0.7);
+	display: flex;
+  align-items: center;
+  justify-content: center;
+	animation-name: modal;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+	opacity: 100%;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes modal {
+    0%   {opacity: 0%;}
+		100%   {opacity: 100%;}
+}
+
+/* Standard syntax */
+@keyframes modal {
+	0%   {opacity: 0%;}
+	100%   {opacity: 100%;}
+}
+
+.bt_x{
+	position: absolute;
+	z-index: 99999;
+	right: 0px;
+	top: 0px;
+	width: 20px;
+	cursor: pointer;
+	background:-webkit-gradient(radial, 165 0, 0, 220 -257, 465, from(#470926), to(#7d1144));
+	padding: 15px;
+
+}
+
+.modal_box{
+	width: 700px;
+	padding: 50px;
+	overflow: hidden;
+	background: #fff;
+	position: relative;
+}
+
+.info_prod_int{
+	float: left;
+	width: 315px;
+	overflow: hidden;
+	color: #848484;
+}
+
+.shadow_int{
+	float: left;
+	width: 35px;
+	margin-left: 35px;
+	overflow: hidden;
+}
+
+.form_prod_int{
+	float: left;
+	width: 315px;
+	overflow: hidden;
+}
+
+.text_prod_int{
+	font-size: 18px;
+}
+
+.name_prod_int{
+	font-size: 38px;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-bottom: 40px;
+}
+
+.img_prod_int{
+	overflow: hidden;
+}
+
+.intencao_text{
+	font-size: 23px;
+	color: #480926;
+}
+
+.compra_text{
+	font-size: 43px;
+	color: #480926;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.text_info_compra{
+	font-size: 14px;
+	color: #666;
+	margin-bottom: 10px;
+}
+
+.input_compra{
+	padding: 10px 15px;
+	background: #ddd;
+	color: #585858;
+	font-size: 16px;
+	margin-bottom: 10px;
+	width: 283px;
+	border: solid 1px #ddd;
+}
+
+.bt_compra{
+	padding: 15px 0px;
+	background:-webkit-gradient(radial, 165 0, 0, 220 -257, 465, from(#470926), to(#7d1144));
+	color: #fff;
+	font-size: 16px;
+	margin-bottom: 10px;
+	width: 315px;
+	border: solid 1px #fff;
+	font-weight: bold;
+	font-family: 'avante';
+	text-transform: uppercase;
+}
+
+.tag_title{
+	background:-webkit-gradient(radial, 165 0, 0, 220 -257, 465, from(#470926), to(#7d1144));
+	color: #cf2976;
+	font-size: 35px;
+	padding: 40px 0;
+	margin-bottom: 90px;
+	margin-top: 115px;
+}
+
+.title_page1{
+	float: left;
+}
+
+.title_page2{
+	float: left;
+	font-size: 22px;
+	color: #fff;
+	margin-left: 30px;
+	margin-top: 10px;
+}
+
+
+.img_empresa{
+	float: left;
+	width: 450px;
+	overflow: hidden;
+}
+
+.info_empresa{
+	float: right;
+	width: 500px;
+	overflow: hidden;
+}
+
+.title1_empresa{
+	color: #75103f;
+	font-size: 35px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.title2_empresa{
+	color: #3d3d3d;
+	font-size: 22px;
+	margin-bottom: 25px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.text_empresa{
+	text-align: justify;
+	font-size: 14px;
+	line-height: 24px;
+	font-family: 'Montserrat', sans-serif;
+	overflow: hidden;
+	margin-bottom: 100px;
+}
+
+.img_prod{
+	overflow: hidden;
+	margin-bottom: 30px;
+}
+
+.bt_interesse_prod{
+	padding: 15px 0;
+	text-align: center;
+	color: #fff;
+	background:-webkit-gradient(radial, 165 0, 0, 220 -257, 465, from(#470926), to(#7d1144));
+	font-size: 18px;
+	cursor: pointer;
+}
+
+.modo_usar{
+	background: #490927;
+	text-align: center;
+	padding: 100px 0;
+	overflow: hidden;
+	color: #fff;
+}
+
+.text_modo{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+	line-height: 24px;
+}
+
+
+.input_form{
+	padding: 15px 15px;
+	background: #ddd;
+	color: #585858;
+	font-size: 16px;
+	margin-bottom: 10px;
+	width: 400px;
+	border: solid 1px #ddd;
+}
+
+.bt_enviar{
+	padding: 15px 0px;
+	background:-webkit-gradient(radial, 165 0, 0, 220 -257, 465, from(#470926), to(#7d1144));
+	color: #fff;
+	font-size: 16px;
+	margin-bottom: 10px;
+	width: 430px;
+	border: solid 1px #fff;
+	font-weight: bold;
+	font-family: 'avante';
+	text-transform: uppercase;
+}
+
+.whats{
+	float: left;
+	width: 300px;
+	overflow: hidden;
+}
+
+.icon_whats_b{
+	float: left;
+	width: 35px;
+	overflow: hidden;
+}
+
+.n_whats{
+	font-size: 18px;
+	font-weight: bold;
+	float: left;
+	width: 250px;
+	margin-left: 15px;
+	margin-top: 5px;
+	text-align: left;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.mail{
+	float: left;
+	width: 350px;
+	overflow: hidden;
+}
+
+.icon_mail_b{
+	float: left;
+	width: 35px;
+	overflow: hidden;
+}
+
+.email{
+	font-size: 16px;
+	font-weight: bold;
+	float: left;
+	width: 250px;
+	margin-left: 15px;
+	margin-top: 5px;
+	text-align: left;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.social_media{
+	float: left;
+	width: 340px;
+	overflow: hidden;
+	margin-left: 10px;
+}
+
+.icon_face_b{
+	float: left;
+	width: 35px;
+	overflow: hidden;
+}
+
+.icon_insta_b{
+	float: left;
+	width: 35px;
+	overflow: hidden;
+	margin-left: 5px;
+}
+
+.name_social{
+	font-size: 16px;
+	font-weight: bold;
+	float: left;
+	width: 250px;
+	margin-left: 15px;
+	margin-top: 5px;
+	text-align: left;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.wp{
+	width: 60px;
+	height: 60px;
+	overflow: hidden;
+	position: fixed;
+	z-index: 9999999999999999999999999999999;
+	bottom: 50px;
+	left: 20px;
+	animation-name: whatsapp;
+  animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes whatsapp {
+    0%   {bottom: 15px;}
+    50%  {bottom: 35px;}
+    100% {bottom: 15px;}
+}
+
+/* Standard syntax */
+@keyframes whatsapp {
+    0%   {bottom: 15px;}
+    50%  {bottom: 35px;}
+    100% {bottom: 15px;}
+}
+
+.mapag{
+	width: 100%;
+	height: 350px;
+	overflow: hidden;
+}
+
+.size_map{
+	width: 100%;
+	height: 350px;
+	overflow: hidden;
+}
+
+.menu_mob{display: none;}
+
+.box_mensagem{
+	display: none;
+	font-family: 'Montserrat', sans-serif;
+	text-align: center;
+}
+
+.title_msg{
+	text-transform: uppercase;
+	font-size: 28px;
+	color:#470926;
+	margin-top: 45px;
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+
+.text_mensagem{
+	font-size: 16px;
+	margin-bottom: 30px;
+}
+
+.social_m{
+	display: none;
+}
+
+
+
+@media only screen and (max-width: 999px) {
+
+
+	/**container**/
+	.container{
+		width: 80%;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+
+
+	/**header**/
+	header{
+		background: #fff;
+		display: block;
+		border-bottom: solid 2px #470926;
+		position: fixed;
+		z-index: 999999999;
+		width: 100%;
+		top: 0;
+		left: 0;
+		height: 75px;
+		overflow: hidden;
+	}
+
+	.loading_gif{
+		width: 100px;
+		margin: 0 auto;
+	}
+
+
+	.menu1{
+		display: none;
+	}
+
+	.menu2{
+		display: none;
+	}
+
+
+	.shadow_l{
+		display: none;
+	}
+
+
+	.shadow_r{
+		display: none;
+	}
+
+	.logo{
+		position: absolute;
+		float: left;
+		width: 110px;
+		overflow: hidden;
+		margin-top: 0px;
+		left: 10px;
+		top: 10px;
+	}
+
+
+	/**BT MOBILE**/
+	.bt_menu_mob{
+		display: block;
+		position: absolute;
+		z-index: 99999;
+		right: 0px;
+		top: 0px;
+		width: 40px;
+		cursor: pointer;
+		background:-webkit-gradient(radial, 165 0, 0, 220 -257, 465, from(#470926), to(#7d1144));
+		padding: 5px;
+	}
+
+.menu_mob{
+	position: fixed;
+	top: 75px;
+	width: 90%;
+	background: #470926;
+	color: #fff;
+	text-align: center;
+	padding: 30px 5%;
+	overflow: hidden;
+	left: 0;
+	z-index: 99999999999999999999;
+}
+
+.lk_mob{
+	padding: 20px 0;
+	border-bottom: 1px solid #fff;
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.social{
+	margin: 0 auto;
+	float: none;
+	margin-top: 20px;
+}
+
+.menu_mob ul li ul{
+	display: none;
+	background: #fff;
+	padding: 20px;
+	color: #470926;
+}
+
+.menu_mob ul li:hover > ul{
+	display: block;
+}
+
+.sub_mob{
+	padding: 10px 0;
+	border-bottom: 1px solid #470926;
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+	color: #470926;
+	font-weight: bold;
+}
+
+
+
+			.bt_ball{
+			display: none;
+			}
+
+	/*FIM SLIDER*/
+
+
+	/**DESTAQUES**/
+	.destaques{
+		display: block;
+		overflow: hidden;
+		padding: 0 0 100px 0;
+	}
+
+	.title_1{
+		text-align: center;
+		font-size: 38px;
+		color: #470926;
+		margin-bottom: 60px;
+	}
+
+	.conj_prod{
+		float: none;
+		width: 100%;
+		margin: 0 0%;
+		text-align: center;
+		text-transform: uppercase;
+		margin-bottom: 90px;
+	}
+
+
+
+
+
+	/*FOOTER*/
+	footer{
+		padding: 40px 0%;
+		overflow: hidden;
+		display: block;
+		color: #808080;
+		border-bottom: 5px solid #470926;
+	}
+
+	.logo_footer{
+		float: none;
+		width: 109px;
+		overflow: hidden;
+		margin: 0 auto;
+	}
+
+	.copyright{
+		float: none;
+		margin-left: 0px;
+		font-size: 12px;
+		overflow: hidden;
+		margin-top: 20px;
+		text-align: center;
+	}
+
+	.tw{
+		width: 101px;
+		height: 28px;
+		float: none;
+		margin: 0 auto;
+		background:url(../img/tw.png) no-repeat left top;
+		transition: all .5s ease;
+		-moz-transition: all .5s ease;
+		-webkit-transition: all .5s ease;
+		-o-transition: all .5s ease;
+		-ms-transition: all .5s ease;
+		margin-top: 15px;
+	}
+
+	.tw:hover{
+		background:url(../img/tw.png) no-repeat right top;
+	}
+
+	/**box interesse**/
+	.box_interesse{
+		display: none;
+	}
+
+	.transparencia{
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		z-index: 99999999999999999999999999999999999;
+		left: 0;
+		top: 0;
+		background-color: rgba(0, 0, 0, 0.7);
+		background: rgba(0, 0, 0, 0.7);
+		display: flex;
+	  align-items: center;
+	  justify-content: center;
+		animation-name: modal;
+		animation-duration: 1s;
+		animation-iteration-count: 1;
+		opacity: 100%;
+	}
+
+	/* Safari 4.0 - 8.0 */
+	@-webkit-keyframes modal {
+	    0%   {opacity: 0%;}
+			100%   {opacity: 100%;}
+	}
+
+	/* Standard syntax */
+	@keyframes modal {
+		0%   {opacity: 0%;}
+		100%   {opacity: 100%;}
+	}
+
+	.bt_x{
+		position: absolute;
+		z-index: 99999;
+		right: 0px;
+		top: 0px;
+		width: 20px;
+		cursor: pointer;
+		background:-webkit-gradient(radial, 165 0, 0, 220 -257, 465, from(#470926), to(#7d1144));
+		padding: 15px;
+
+	}
+
+	.modal_box{
+		width: 70%;
+		padding: 20px;
+		overflow: hidden;
+		background: #fff;
+		position: relative;
+	}
+
+	.info_prod_int{
+		float: none;
+		width: 100%;
+		overflow: hidden;
+		color: #848484;
+	}
+
+	.shadow_int{
+		float: left;
+		width: 35px;
+		margin-left: 35px;
+		overflow: hidden;
+		display: none;
+	}
+
+	.form_prod_int{
+		float: none;
+		width: 100%;
+		overflow: hidden;
+	}
+
+	.text_prod_int{
+		font-size: 18px;
+	}
+
+	.name_prod_int{
+		font-size: 38px;
+		text-transform: uppercase;
+		font-weight: bold;
+		margin-bottom: 40px;
+	}
+
+	.img_prod_int{
+		overflow: hidden;
+	}
+
+	.intencao_text{
+		font-size: 23px;
+		color: #480926;
+	}
+
+	.compra_text{
+		font-size: 43px;
+		color: #480926;
+		margin-bottom: 10px;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+
+	.text_info_compra{
+		font-size: 14px;
+		color: #666;
+		margin-bottom: 10px;
+	}
+
+	.input_compra{
+		padding: 10px 15px;
+		background: #ddd;
+		color: #585858;
+		font-size: 16px;
+		margin-bottom: 10px;
+		width: 90%;
+		border: solid 1px #ddd;
+	}
+
+	.bt_compra{
+		padding: 15px 0px;
+		background:-webkit-gradient(radial, 165 0, 0, 220 -257, 465, from(#470926), to(#7d1144));
+		color: #fff;
+		font-size: 16px;
+		margin-bottom: 10px;
+		width: 100%;
+		border: solid 1px #fff;
+		font-weight: bold;
+		font-family: 'avante';
+		text-transform: uppercase;
+	}
+
+	.tag_title{
+		background:-webkit-gradient(radial, 165 0, 0, 220 -257, 465, from(#470926), to(#7d1144));
+		color: #cf2976;
+		font-size: 20px;
+		padding: 25px 0;
+		margin-bottom: 90px;
+		margin-top: 75px;
+	}
+
+	.title_page1{
+		float: left;
+	}
+
+	.title_page2{
+		float: left;
+		font-size: 16px;
+		color: #fff;
+		margin-left: 30px;
+		margin-top: 2px;
+	}
+
+
+	.img_empresa{
+		float: none;
+		width: 100%;
+		overflow: hidden;
+		margin-bottom: 30px;
+	}
+
+	.info_empresa{
+		float: none;
+		width: 100%;
+		overflow: hidden;
+	}
+
+	.title1_empresa{
+		color: #75103f;
+		font-size: 35px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+
+	.title2_empresa{
+		color: #3d3d3d;
+		font-size: 22px;
+		margin-bottom: 25px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+
+	.text_empresa{
+		text-align: left;
+		font-size: 18px;
+		line-height: 30px;
+		font-family: 'Montserrat', sans-serif;
+		overflow: hidden;
+		margin-bottom: 100px;
+	}
+
+	.img_prod{
+		overflow: hidden;
+		margin-bottom: 30px;
+	}
+
+	.bt_interesse_prod{
+		padding: 15px 0;
+		text-align: center;
+		color: #fff;
+		background:-webkit-gradient(radial, 165 0, 0, 220 -257, 465, from(#470926), to(#7d1144));
+		font-size: 18px;
+		cursor: pointer;
+	}
+
+	.modo_usar{
+		background: #490927;
+		text-align: center;
+		padding: 100px 0;
+		overflow: hidden;
+		color: #fff;
+	}
+
+	.text_modo{
+		font-family: 'Montserrat', sans-serif;
+		font-size: 14px;
+		line-height: 24px;
+	}
+
+
+	.input_form{
+		padding: 15px 15px;
+		background: #ddd;
+		color: #585858;
+		font-size: 16px;
+		margin-bottom: 10px;
+		width: 400px;
+		border: solid 1px #ddd;
+	}
+
+	.bt_enviar{
+		padding: 15px 0px;
+		background:-webkit-gradient(radial, 165 0, 0, 220 -257, 465, from(#470926), to(#7d1144));
+		color: #fff;
+		font-size: 16px;
+		margin-bottom: 10px;
+		width: 100%;
+		border: solid 1px #fff;
+		font-weight: bold;
+		font-family: 'avante';
+		text-transform: uppercase;
+	}
+
+	.whats{
+		float: none;
+		width: 100%;
+		overflow: hidden;
+		margin-bottom: 20px;
+	}
+
+	.icon_whats_b{
+		float: left;
+		width: 35px;
+		overflow: hidden;
+	}
+
+	.n_whats{
+		font-size: 18px;
+		font-weight: bold;
+		float: left;
+		width: 250px;
+		margin-left: 15px;
+		margin-top: 5px;
+		text-align: left;
+		font-family: 'Montserrat', sans-serif;
+	}
+
+	.mail{
+		float: none;
+		width: 100%;
+		overflow: hidden;
+		margin-bottom: 20px;
+	}
+
+	.icon_mail_b{
+		float: left;
+		width: 35px;
+		overflow: hidden;
+	}
+
+	.email{
+		font-size: 14px;
+		font-weight: bold;
+		float: left;
+		width: 250px;
+		margin-left: 15px;
+		margin-top: 5px;
+		text-align: left;
+		font-family: 'Montserrat', sans-serif;
+	}
+
+	.social_media{
+		float: none;
+		width: 100%;
+		overflow: hidden;
+		margin-left: 0px;
+	}
+
+	.icon_face_b{
+		float: left;
+		width: 35px;
+		overflow: hidden;
+	}
+
+	.icon_insta_b{
+		float: left;
+		width: 35px;
+		overflow: hidden;
+		margin-left: 5px;
+	}
+
+	.name_social{
+		font-size: 16px;
+		font-weight: bold;
+		float: left;
+		width: 200px;
+		margin-left: 15px;
+		margin-top: 5px;
+		text-align: left;
+		font-family: 'Montserrat', sans-serif;
+	}
+
+	.wp{
+		width: 60px;
+		height: 60px;
+		overflow: hidden;
+		position: fixed;
+		z-index: 9999999999999999999999999999999;
+		bottom: 50px;
+		left: 20px;
+		animation-name: whatsapp;
+	  animation-duration: 1s;
+		animation-iteration-count: infinite;
+	}
+
+	/* Safari 4.0 - 8.0 */
+	@-webkit-keyframes whatsapp {
+	    0%   {bottom: 15px;}
+	    50%  {bottom: 35px;}
+	    100% {bottom: 15px;}
+	}
+
+	/* Standard syntax */
+	@keyframes whatsapp {
+	    0%   {bottom: 15px;}
+	    50%  {bottom: 35px;}
+	    100% {bottom: 15px;}
+	}
+
+	.mapag{
+		width: 100%;
+		height: 350px;
+		overflow: hidden;
+	}
+
+	.size_map{
+		width: 100%;
+		height: 350px;
+		overflow: hidden;
+	}
+
+	.social_m{
+		display: block;
+		position: fixed;
+		top: -10px;
+		width: 80px;
+		color: #fff;
+		text-align: center;
+		padding: 30px 5%;
+		overflow: hidden;
+		right: 50px;
+		z-index: 99999999999999999999;
+	}
+
+}

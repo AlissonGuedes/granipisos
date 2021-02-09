@@ -1,0 +1,118 @@
+<div class="container_right panel">
+
+	<!-- Header search bar starts -->
+	<div class="title_pg f_avante" style="place-content: start;">
+
+		<button data-href="<?= base_url(); ?>clientes" class="btn btn-flat btn-small btn-floating transparent waves-effect waves-light white-text bt_ac btn-flat mr-1" data-tooltip="Voltar">
+			<i class="material-icons">arrow_back</i>
+		</button>
+
+		<div class="mr-2">Clientes - <?= ! isset($row) ? 'Adicionar' : 'Editar' ?></div>
+
+	</div>
+	<!-- Header search bar Ends -->
+
+	<!-- BEGIN panel-content -->
+	<div class="panel-content">
+
+		<!-- BEGIN panel-header -->
+		<div class="panel-header no-border">
+
+			<!-- BEGIN Toolbar -->
+			<div class="toolbar bts_acao f_bebas">
+
+				<div class="buttons">
+
+					<!-- BEGIN Lista de Botões -->
+					<div class="buttons show-buttons">
+
+						<?php if ( isset($row) ) : ?>
+						<button class="btn btn-large excluir waves-effect" value="<?= isset($row) ? $row -> id : null; ?>" data-tooltip="Excluir" data-link="<?= base_url(); ?>clientes" style="border: none">
+							<i class="material-icons">delete_forever</i>
+						</button>
+						<div class="divider"></div>
+						<?php endif; ?>
+
+					</div>
+					<!-- END Lista de Botões -->
+
+				</div>
+
+			</div>
+			<!-- END Toolbar -->
+
+		</div>
+		<!-- END panel-header -->
+
+		<!-- BEGIN panel-body -->
+		<div class="area_dashboard panel-body pl-0 pr-0 pt-1">
+
+			<div class="row">
+
+				<div class="col l6 s12">
+
+					<form method="post" action="<?= base_url(); ?>clientes" novalidate enctype="multipart/form-data" autocomplete="off">
+
+						<!-- BEGIN título -->
+						<div class="row">
+							<div class="input-field amber-text mb-2">
+								<label class="grey-text">Nome</label>
+								<input type="text" name="nome" id="nome" class="box_input amber-border amber-text" value="<?= isset($row) ? $row -> nome : null; ?>" autofocus="autofocus">
+							</div>
+						</div>
+						<!-- END título -->
+
+						<!-- BEGIN url -->
+						<div class="row">
+							<div class="input-field amber-text mb-2">
+								<label class="grey-text">URL</label>
+								<input type="url" name="site" id="site" class="box_input amber-border amber-text" value="<?= isset($row) ? $row -> site : null; ?>">
+							</div>
+						</div>
+						<!-- END url -->
+
+						<!-- BEGIN imagem -->
+						<div class="row">
+							<div class="input-field media conj_img_edit">
+								<div class="img_icon_pdf image_view z-depth-4 material-icons">
+									<?php if ( isset($row) && $row -> imagem ) : ?>
+									<img src="<?= $row -> imagem; ?>" class="img_cem materialboxed original">
+									<input type="hidden" name="original_name">
+									<?php endif; ?>
+								</div>
+								<div class="nome_arquivo" data-placeholder="<?= isset($row) && $row -> imagem ? basename($row -> imagem) : 'Selecione uma imagem (Tamanho ideal: 200x200)'; ?>"></div>
+								<div class="bt_excluir waves-effect redefinir amber" style="<?= isset($row) && ! empty($row -> imagem) ? 'display: none;' : ''; ?>">
+									<i class="material-icons">undo</i>
+								</div>
+								<div class="btn_add_new_image waves-effect image_alt amber">
+									<i class="material-icons">add_photo_alternate</i>
+								</div>
+								<input type="file" name="imagem" id="img_perfil" accept="image">
+							</div>
+						</div>
+						<!-- END imagem -->
+
+						<br>
+						<br>
+
+						<div class="row">
+							<button type="submit" class="amber btn col btn-large black-text waves-effect"><?= ! isset($row) ? 'Adicionar' : 'Editar' ?> Cliente</button>
+						</div>
+
+						<input type="hidden" name="acao" value="login">
+						<input type="hidden" name="id" value="<?= isset($row) ? $row -> id : null; ?>">
+						<input type="hidden" name="_method" value="<?= isset($row) ? 'put' : 'post'; ?>">
+
+					</form>
+
+				</div>
+
+			</div>
+
+		</div>
+		<!-- END panel-body -->
+
+	</div>
+	<!-- END panel-content -->
+
+</div>

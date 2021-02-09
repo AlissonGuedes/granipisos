@@ -1,0 +1,61 @@
+<div id="composer" class="modal no-padding">
+
+	<form method="post" action="<?= base_url(); ?>mail" novalidate enctype="multipart/form-data" autocomplete="off">
+
+		<div class="modal-content no-padding">
+
+			<!-- conteúdo -->
+
+			<!-- BEGIN Input[Descrição] -->
+			<div class="row">
+				<div class="col s12">
+					<div class="input-field">
+						<div class="editor basic--editor" style="min-height: 400px;"></div>
+						<input type="hidden" name="mensagem" id="mensagem">
+					</div>
+				</div>
+			</div>
+			<!-- END Input[Descrição] -->
+
+			<!-- BEGIN Input[Submit] -->
+			<div class="row">
+				<div class="col s12 l3 right">
+					<button type="submit" class="bt_ac amber btn btn-large col black-text waves-effect">
+						enviar
+						<i class="material-icons margin-left">send</i>
+					</button>
+				</div>
+			</div>
+			<!-- END Input[Submit] -->
+
+		</div>
+
+		<input type="hidden" name="status" value="1">
+		<input type="hidden" name="telefone" value="<?= configuracoes('telefone', 'tb_empresa'); ?>">
+		<input type="hidden" name="nome" value="<?= isset($row) ? $row -> nome : null; ?>">
+		<input type="hidden" name="email" value="<?= configuracoes('email', 'tb_empresa'); ?>">
+		<input type="hidden" name="assunto" value="Re: <?= isset($row) ? $row -> assunto : null; ?>">
+		<input type="hidden" name="reply" value="<?= isset($row) ? $row -> id : null; ?>">
+		<input type="hidden" name="_method" value="post">
+
+	</form>
+
+</div>
+
+
+<!-- Modal Structure -->
+<div id="remover" class="modal">
+	<div class="modal-content">
+		<h4>Confirmação</h4>
+		<p>Tem certeza que deseja excluir sua resposta permanentemente?</p>
+	</div>
+	<div class="modal-footer">
+
+		<div class="row">
+			<div class="col s12">
+				<button class="btn amber modal-close waves-effect waves-green btn-flat right" data-confirm="false">Não</a>
+					<button class="btn red right" data-confirm="true"> SIM </button>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,58 @@
+<div class="tag_title">
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<div class="title_page1">SERVIÇOS</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<?php if ( $servicos ) : ?>
+
+<div class="container pt-3 pb-3" style="min-height: 730px;">
+
+	<div class="row">
+
+		<!-- SERVICO -->
+		<?php foreach ( $servicos as $row ) : ?>
+
+		<div class="card col s12 m6 l4">
+
+			<a href="<?= base_url(); ?>servicos/<?= $row -> id; ?>">
+
+				<div class="card-content black-text center-align">
+
+					<div class="card-image">
+						<img src="<?= $row -> imagem; ?>" class="">
+					</div>
+
+					<div class="card-title"><?= $row -> nome; ?></div>
+
+				</div>
+
+			</a>
+
+		</div>
+
+		<?php endforeach; ?>
+
+	</div>
+
+</div>
+
+<?php else : ?>
+
+<div class="container">
+
+	<div class="row">
+		<div class="col s12 mt-5 mb-10">
+			<h3 class="grey-text" style="font-family: avante; font-size: 24px;">Nenhum serviço cadastrado no momento.</h3>
+		</div>
+	</div>
+
+</div>
+
+<?php endif; ?>
+
+<?php require VIEWSPATH . 'clientes/section.phtml'; ?>

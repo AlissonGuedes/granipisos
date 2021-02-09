@@ -1,0 +1,71 @@
+{if is_logged() }
+<div class="menu_left sidebar">
+	<div class="logo_tw_topo">
+		<img src="{+ base_path +}tacticweb/img/ltw.png" class="img_cem">
+	</div>
+
+	<div class="menu_dashboard">
+
+		<a href="{+ base_url +}dashboard">
+			<div class="lk_menu">Dashboard</div>
+		</a>
+
+		<a href="{+ base_url +}banners">
+			<div class="lk_menu">Banners</div>
+		</a>
+
+		<a href="{+ base_url +}quemsomos">
+			<div class="lk_menu">Quem Somos</div>
+		</a>
+
+		<a href="{+ base_url +}servicos">
+			<div class="lk_menu">Serviços</div>
+		</a>
+
+		<!--
+		<a href="{+ base_url +}categorias">
+		<div class="lk_menu">Categorias</div>
+		</a>
+
+		<a href="{+ base_url +}distribuidores">
+			<div class="lk_menu">Distribuidores</div>
+		</a>
+
+		<a href="{+ base_url +}intencoes">
+		<div class="lk_menu">Intenções de Compra</div>
+		</a>
+		-->
+
+		<a href="{+ base_url +}clientes">
+			<div class="lk_menu">Clientes</div>
+		</a>
+
+		<!--
+			<a href="{+ base_url +}mail/template">
+			<div class="lk_menu">Editar Template de e-mail</div>
+		</a>
+		-->
+
+		<a href="{+ base_url +}mail">
+			<div class="lk_menu">E-mail</div>
+		</a>
+
+		<a href="{+ base_url +}usuarios">
+			<div class="lk_menu">Gerenciar Usuários</div>
+		</a>
+
+		<a href="{+ base_site +}" target="_blank">
+			<div class="lk_menu">Acessar o site</div>
+		</a>
+
+		<a href="{+ base_url +}logout">
+			<div class="lk_menu">Sair</div>
+		</a>
+
+	</div>
+</div>
+
+<div class="bt_mob" id="menu_mob" data-element=".menu_dashboard">
+	<img src="img/bt_mob.png" class="img_cem">
+</div>
+{endif}

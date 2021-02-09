@@ -1,0 +1,28 @@
+<?php
+
+$records = [];
+
+if ( isset($rows) ) {
+
+	foreach ( $rows -> result() as $row ){
+
+		$records[] = array(
+			'<label><input type="checkbox" name="id[]" class="light-blue" value="' . $row -> id . '" data-status="' . $row -> status . '"><span></span></label>',
+			// $row -> id,
+			$row -> nome,
+			'<div class="' . ( $row -> status === '0' ? 'blocked' : null) . ' center-align">
+				<i class="material-icons">' . ( $row -> status === '0' ? 'lock' : 'check') . '</i>
+			</div>',
+			'<div class="' . ( $row -> status === '0' ? 'blocked' : null) . ' center-align">
+				<button data-href="' . base_url() . 'produtos/' . $row -> id . '" class="bt_edit btn-floating float-none"></button>
+			</div>'
+		);
+
+	}
+
+}
+
+echo json_encode([
+	'data' => $records,
+	'recordsFiltered' => $numRows,
+]);

@@ -1,0 +1,44 @@
+<?php
+
+$records = [];
+
+if ( isset($distribuidores) ) {
+
+	foreach ( $distribuidores -> result() as $row ){
+
+		$email		= [];
+		$telefone	= [];
+
+		$telefones	= $contatos -> getTelefones($row -> id);
+		$emails		= $contatos -> getEmails($row -> id);
+
+		foreach ($telefones as $tel) {
+			$telefone[] = $tel -> telefone;
+		}
+
+		foreach ($emails as $mail) {
+			$email[] = $mail -> email;
+		}
+
+		$records[] = array(
+			'<label><input type="checkbox" name="id[]" class="light-blue" value="' . $row -> id . '" data-status="' . $row -> status . '"><span></span></label>',
+			// $row -> id,
+			$row -> nome,
+			// implode(', ', $telefone),
+			// '<div class="text-overflow">' . implode(', ', $email) . '</div>',
+            '<div class="' . ( $row -> status === '0' ? 'blocked' : null) . ' center-align">
+				<i class="material-icons">' . ( $row -> status === '0' ? 'lock' : 'check') . '</i>
+			</div>',
+			'<div class="center-align">
+				<button data-href="' . base_url() . 'intencoes/' . $row -> id . '" class="bt_edit btn-floating float-none"></button>
+			</div>'
+		);
+
+	}
+
+}
+
+echo json_encode([
+	'data' => $records,
+	'recordsFiltered' => $numRows,
+]);

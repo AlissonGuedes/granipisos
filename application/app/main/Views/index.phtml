@@ -1,0 +1,55 @@
+<?php if ( $banners ) : ?>
+<!-- BEGIN #banner -->
+<div id="banner">
+	<div class="slider">
+		<ul class="slides">
+
+			<?php foreach($banners as $row ) : ?>
+			<li>
+				<img src="<?= $row -> imagem; ?>">
+				<!-- <div class="caption center-align">
+					<h3 class=" grey-text text-lighten-3">This is our big Tagline!</h3>
+					<h5 class="light grey-text text-lighten-3">Seu cabelo mais hidratado.</h5>
+				</div> -->
+			</li>
+			<?php endforeach; ?>
+		</ul>
+	</div>
+
+	<div class="shadow_slider">
+		<div class="container">
+			<img src="<?= base_path(true); ?>img/shadow_banner.png" class="img_cem">
+		</div>
+	</div>
+
+	<div class="bt_ball">
+		<img src="<?= base_path(true); ?>img/bt_ball.png" class="img_cem">
+	</div>
+
+</div>
+<!-- END #banner -->
+<?php endif; ?>
+
+<?php if ( $servicos ) : ?>
+<!--destaques-->
+<section class="destaques">
+	<div class="container">
+		<div class="title_1">DESTAQUES</div>
+		<div class="prods_dest">
+			<?php foreach ($servicos as $row ) : ?>
+			<!-- SERVICO -->
+			<a href="<?= base_url(); ?>servicos/<?= $row -> id; ?>">
+				<div class="conj_prod">
+					<div class="img_tumb">
+						<img src="<?= $row -> imagem; ?>" class="img_cem">
+					</div>
+					<div class="name_prod"><?= $row -> nome; ?></div>
+				</div>
+			</a>
+			<?php endforeach; ?>
+		</div>
+	</div>
+</section>
+<?php endif; ?>
+
+<?php require VIEWSPATH . 'clientes/section.phtml'; ?>

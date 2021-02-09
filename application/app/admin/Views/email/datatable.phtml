@@ -1,0 +1,25 @@
+<?php 
+
+$records = [];
+
+if ( isset($emails) ) {
+
+	foreach ( $emails as $row ){
+
+		$date = new DateTime($row -> datahora);
+
+		$records[] = array(
+			'<label><input type="checkbox" name="id[]" class="light-blue" value="' . $row -> id . '" data-status="' . $row -> status . '"><span></span></label>',
+			$row -> nome,
+			$row -> assunto,
+			'<div class="right-align">' . $date -> format('d/m/Y H:i:s') . '</div>',
+		);
+
+	}
+
+}
+
+echo json_encode([
+	'data' => $records,
+	'recordsFiltered' => $numRows,
+]);

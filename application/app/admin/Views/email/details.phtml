@@ -1,0 +1,98 @@
+<div class="container_right panel">
+
+  <!-- Header search bar starts -->
+  <div class="title_pg f_avante" style="place-content: start;">
+
+    <button data-href="<?= base_url(); ?>mail" class="btn btn-flat btn-small btn-floating transparent waves-effect waves-light white-text bt_ac btn-flat mr-1">
+      <i class="material-icons">arrow_back</i>
+    </button>
+
+    <?= $row -> assunto; ?>
+
+  </div>
+  <!-- Header search bar Ends -->
+
+  <!-- BEGIN panel-content -->
+  <div class="panel-content">
+
+    <!-- BEGIN panel-header -->
+    <div class="panel-header no-border">
+
+			<!-- BEGIN Toolbar -->
+			<div class="toolbar bts_acao f_bebas">
+
+        <div class="buttons">
+
+					<!-- BEGIN Lista de Botões -->
+          <div class="f_bebas">
+            <div class="input-form">
+              <!-- <button class="bt_ac btn waves-effect waves-light modal-trigger"  href="#composer" data-tooltip="Responder">
+                <i class="material-icons">reply</i>
+              </button> -->
+              <button class="bt_ac btn waves-effect waves-light excluir" value="<?= $row -> id; ?>" data-tooltip="Excluir" data-link="<?= base_url(); ?>mail">
+                <i class="material-icons">delete_forever</i>
+              </button>
+            </div>
+          </div>
+					<!-- END Lista de Botões -->
+
+        </div>
+
+      </div>
+			<!-- END Toolbar -->
+
+    </div>
+    <!-- END panel-header -->
+
+		<!-- BEGIN panel-body -->
+		<div class="area_dashboard panel-body p-0">
+
+				<!-- BEGIN Nome -->
+      <div class="row">
+        <div class="col s12">
+          <div class="input-form">
+            <div class="text_form_inc">Nome / E-mail:</div>
+            <div class="valor_form"><?= $row -> nome; ?> - &lt;<?= $row -> email; ?>&gt;</div>
+          </div>
+        </div>
+      </div>
+  		<!-- END Nome -->
+
+      <!-- BEGIN Telefone -->
+      <div class="row">
+        <div class="col s12">
+          <div class="input-form">
+            <div class="text_form_inc">Telefone:</div>
+            <div class="valor_form"><?= $row -> telefone; ?></div>
+          </div>
+        </div>
+      </div>
+      <!-- END Telefone -->
+
+      <!-- BEGIN Mensagem -->
+      <div class="row">
+          <div class="col s12">
+            <div class="input-form mt-2 mb-2 valor_form scroller" style="height: 300px;">
+          <?= $row -> mensagem; ?>
+        </div>
+      </div>
+      <!-- END Mensagem -->
+
+      <!-- <div class="row">
+        <div class="col s12">
+          <button class="bt_ac btn waves-effect waves-light modal-trigger"  href="#composer">
+            <i class="material-icons">reply</i>
+            Responder
+          </button>
+        </div>
+      </div> -->
+
+    </div>
+		<!-- END panel-body -->
+
+	</div>
+	<!-- END panel-content -->
+
+</div>
+
+<?php require 'formulario.phtml'; ?>
