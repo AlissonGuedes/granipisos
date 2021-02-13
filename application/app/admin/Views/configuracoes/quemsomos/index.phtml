@@ -12,7 +12,7 @@
 	<div class="panel-content">
 
 		<!-- BEGIN panel-header -->
-		<div class="panel-header no-border">
+		<div class="panel-header no-border" style="height: 0px !important; min-height: 0px !important; max-height: 0px !important; padding: 0 !important;">
 
 			<!-- BEGIN Toolbar -->
 			<div class="toolbar bts_acao f_bebas">
@@ -24,7 +24,7 @@
 		<!-- END panel-header -->
 
 		<!-- BEGIN panel-body -->
-		<div class="area_dashboard panel-body pl-0 pr-0 pt-1">
+		<div class="area_dashboard panel-body pl-0 pr-0 pt-3" style="position: relative; top: 80px;">
 
 			<form method="post" autocomplete="off" novalidate action="<?= base_url(); ?>quemsomos">
 
@@ -34,7 +34,7 @@
 					<div class="col s12 l6 pl-0">
 						<div class="input-field amber-text mb-2">
 							<label class="grey-text">Telefone</label>
-							<input type="tel" name="telefone" class="amber-border white-text" maxlength="16" value="<?= isset($row) ? $row -> telefone : null; ?>">
+							<input type="tel" name="telefone" class="amber-border white-text is_phone" maxlength="16" value="<?= isset($row) ? $row -> telefone : null; ?>">
 						</div>
 					</div>
 					<!-- END Input[telefone] -->
@@ -43,13 +43,12 @@
 					<div class="col s12 l6 pr-0">
 						<div class="input-field amber-text mb-2">
 							<label class="grey-text">Celular / Whatsapp</label>
-							<input type="tel" name="celular" class="amber-border white-text" maxlength="16" value="<?= isset($row) ? $row -> celular : null; ?>">
+							<input type="tel" name="celular" class="amber-border white-text is_celular" maxlength="16" value="<?= isset($row) ? $row -> celular : null; ?>">
 						</div>
 					</div>
 					<!-- END Input[E-mail] -->
 
 				</div>
-
 
 				<div class="row">
 
@@ -116,7 +115,7 @@
 					<div class="col s12 l6 pr-0">
 						<div class="input-field">
 							<label class="grey-text">Google Maps</label>
-							<input type="url" name="gmaps" class="amber-border white-text" maxlength="160" value="<?= isset($row) ? $row -> gmaps : null; ?>">
+							<input type="url" name="gmaps" class="amber-border white-text" maxlength="555" value="<?= isset($row) ? $row -> gmaps : null; ?>">
 						</div>
 					</div>
 					<!-- END Input[GoogleMaps] -->

@@ -40,6 +40,7 @@ namespace App\Entities {
 		protected $youtube = null;
 		protected $linkedin = null;
 		protected $gplus = null;
+		protected $gmaps = null;
 		protected $website = null;
 		protected $telefone = null;
 		protected $celular = null;
@@ -689,6 +690,17 @@ namespace App\Entities {
 		public function getGplus()
 		{
 			return $this -> gplus;
+		}
+
+		public function setGmaps(string $str = null)
+		{
+			$this -> gmaps = htmlentities($str);
+			return $this;
+		}
+
+		public function getGmaps()
+		{
+			return $this -> gmaps;
 		}
 
 		public function setWebsite(string $str = null)

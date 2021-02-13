@@ -29,6 +29,7 @@ function core() {
     buttonActions();
     Materializecss();
     editor();
+    App.aplicarMascaras();
 
     $('[data-tooltip]').tooltip();
     $('.materialboxed').materialbox();

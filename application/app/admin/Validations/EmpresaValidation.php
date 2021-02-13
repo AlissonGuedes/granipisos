@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\Validations {
 
@@ -13,6 +13,8 @@ namespace App\Validations {
 				'facebook',
 				'instagram',
 				'linkedin',
+				'gplus',
+				'gmaps',
 				'telefone',
 				( ! empty($_FILES['quem_somos_imagem']) ? 'quem_somos_imagem' : NULL ),
 				( ! empty($_FILES['distribuidor_imagem']) ? 'distribuidor_imagem' : NULL ),
@@ -30,7 +32,7 @@ namespace App\Validations {
 			$validate['instagram'] = empty($_POST['instagram']) ? 'trim' : 'valid_url';
 			$validate['linkedin'] = empty($_POST['linkedin']) ? 'trim' : 'valid_url';
 			$validate['gplus'] = empty($_POST['gplus']) ? 'trim' : 'valid_url';
-			$validate['gmaps'] = empty($_POST['gmaps']) ? 'trim' : 'valid_url';
+			// $validate['gmaps'] = empty($_POST['gmaps']) ? 'trim' : 'valid_url';
 
 			return $validate;
 
