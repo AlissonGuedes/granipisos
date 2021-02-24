@@ -55,7 +55,7 @@ namespace App\Models {
 
 			// $this -> join('tb_servico', 'tb_servico.id = tb_servico.id_categoria', 'left');
 
-			if ( !is_null($find) && is_numeric($find) ) {
+			if ( !is_null($find) ) {
 				$this -> where('tb_servico.id', $find);
 				return $this;
 			}

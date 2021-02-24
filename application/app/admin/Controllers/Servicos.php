@@ -35,11 +35,12 @@ namespace App\Controllers {
 
 		//--------------------------------------------------------------------
 
-		public function formulario($id) {
+		public function formulario($id = null) {
 
 			$dados['method'] = is_null($id) ? 'post' : 'put';
 			$dados['row'] = $this -> servico_model -> getAll($id) -> get() -> getRow();
 			$dados['categorias'] = $this -> servico_model -> getCategorias();
+
 			return $this -> view('servicos/formulario', $dados);
 
 		}
