@@ -333,7 +333,7 @@ textarea.materialize-textarea:focus:not([readonly]),
     display: flex;
     place-content: center;
     align-items: center;
-    padding: 0px;
+    padding: 65px;
 }
 
 .modal.inline .modal-header .btn {
@@ -348,7 +348,7 @@ textarea.materialize-textarea:focus:not([readonly]),
 }
 
 .shadow_int {
-    width: 60px;
+    width: 160px;
 }
 
 @media screen and (max-width: 899px) {
