@@ -360,3 +360,14 @@ textarea.materialize-textarea:focus:not([readonly]),
         padding: 24px;
     }
 }
+
+.mr-1 {
+    margin-right: 1%
+}
+
+.area_distribuidor .social {
+    float: none;
+    width: auto;
+    margin-top: auto;
+    display: inline-block;
+}
